@@ -1,0 +1,111 @@
+/*---------------------------------
+function
+---------------------------------*/
+/*---------------------------------
+contents
+---------------------------------*/
+.en {
+  font-family: "Lato", sans-serif;
+}
+
+.bg-yellow {
+  background-color: #ffd806;
+}
+
+.link-text {
+  color: #272343;
+}
+.link-text:hover {
+  opacity: 0.5;
+}
+
+.btn--wrap {
+  text-align: center;
+  margin-top: 1.5625vw;
+}
+.btn--wrap .btn-content {
+  padding: 1.0416666667vw 7.2916666667vw;
+  border-radius: 100em;
+  font-weight: bold;
+}
+.btn--wrap .btn-content:hover {
+  opacity: 0.8;
+}
+
+.login {
+  background-color: #e9e9e9;
+  border-top: 60px solid #e4f6f5;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #272343;
+  line-height: 1;
+}
+.login .contents--wrap {
+  background-color: #fffffe;
+  max-width: 35.8333333333vw;
+  margin: 10em auto;
+  padding: 1.8229166667vw;
+}
+.login .content__title {
+  text-align: center;
+}
+.login .content__title__text {
+  font-size: 3.125vw;
+  font-weight: 500;
+  background: linear-gradient(transparent 69%, #c3e7e7 60%);
+}
+.login .form--login {
+  margin-top: 3.6458333333vw;
+}
+.login .input--area:not(:first-of-type) {
+  margin-top: 1.5625vw;
+}
+.login .input--area .form--label {
+  display: block;
+}
+.login .input--area .form--input {
+  display: block;
+  margin-top: 0.78125vw;
+  border: 1px solid #ccc;
+  border-radius: 0.2604166667vw;
+  width: 100%;
+  padding: 0.78125vw;
+}
+.login .link--new-account {
+  display: block;
+  margin-top: 3.125vw;
+  text-align: center;
+}
+
+/*---------------------------------
+function
+---------------------------------*/
+/*---------------------------------
+contents
+---------------------------------*/
+.en {
+  font-family: "Lato", sans-serif;
+}
+
+.bg-yellow {
+  background-color: #ffd806;
+}
+
+.link-text {
+  color: #272343;
+}
+.link-text:hover {
+  opacity: 0.5;
+}
+
+.btn--wrap {
+  text-align: center;
+  margin-top: 1.5625vw;
+}
+.btn--wrap .btn-content {
+  padding: 1.0416666667vw 7.2916666667vw;
+  border-radius: 100em;
+  font-weight: bold;
+}
+.btn--wrap .btn-content:hover {
+  opacity: 0.8;
+}

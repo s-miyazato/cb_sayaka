@@ -1,0 +1,49 @@
+/*---------------------------------
+function
+---------------------------------*/
+@function vw($size, $viewport: 480) {
+  $rate: 100 / $viewport;
+  @return ($rate * $size) * 1vw;
+}
+
+@function p-vw($size, $viewport: 1920) {
+  $rate: 100 / $viewport;
+  @return ($rate * $size) * 1vw;
+}
+
+
+/*---------------------------------
+contents
+---------------------------------*/
+// フォント
+.en {
+  font-family: 'Lato', sans-serif;
+}
+// 配色
+.bg-yellow {
+  background-color: #ffd806;
+}
+
+// 見出し
+
+// リンク
+.link-text {
+  color: #272343;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+//ボタン
+.btn--wrap {
+  text-align: center;
+  margin-top: p-vw(30);
+  .btn-content {
+    padding: p-vw(20) p-vw(140);
+    border-radius: 100em;
+    font-weight: bold;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.login {
+  background-color: #e9e9e9;
+  border-top: 60px solid #e4f6f5;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #272343;
+  line-height: 1;
+  .contents--wrap {
+    background-color: #fffffe;
+    max-width: p-vw(688);
+    margin: 10em auto;
+    padding: p-vw(35);
+  }
+  .content__title {
+    text-align: center;
+    &__text {
+      font-size: p-vw(60);
+      font-weight: 500;
+      background:linear-gradient(transparent 69%, #c3e7e7 60%);
+    }
+  }
+  .form--login {
+    margin-top: p-vw(70);
+  }
+  .input--area {
+    &:not(:first-of-type) {
+      margin-top: p-vw(30);
+    }
+    .form--label {
+      display: block;
+    }
+    .form--input {
+      display: block;
+      margin-top: p-vw(15);
+      border: 1px solid #ccc;
+      border-radius: p-vw(5);
+      width: 100%;
+      padding: p-vw(15);
+    }
+  }
+  .link--new-account {
+    display: block;
+    margin-top: p-vw(60);
+    text-align: center;
+  }
+}
