@@ -41,6 +41,7 @@ contents
 }
 .login .contents--wrap {
   background-color: #fffffe;
+  box-shadow: 0 0 8px #ccc;
   max-width: 35.8333333333vw;
   margin: 10em auto;
   padding: 1.8229166667vw;
@@ -74,38 +75,4 @@ contents
   display: block;
   margin-top: 3.125vw;
   text-align: center;
-}
-
-/*---------------------------------
-function
----------------------------------*/
-/*---------------------------------
-contents
----------------------------------*/
-.en {
-  font-family: "Lato", sans-serif;
-}
-
-.bg-yellow {
-  background-color: #ffd806;
-}
-
-.link-text {
-  color: #272343;
-}
-.link-text:hover {
-  opacity: 0.5;
-}
-
-.btn--wrap {
-  text-align: center;
-  margin-top: 1.5625vw;
-}
-.btn--wrap .btn-content {
-  padding: 1.0416666667vw 7.2916666667vw;
-  border-radius: 100em;
-  font-weight: bold;
-}
-.btn--wrap .btn-content:hover {
-  opacity: 0.8;
 }
