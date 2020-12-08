@@ -1,0 +1,101 @@
+.page {
+  color: #272343;
+  display: flex;
+  .header--area {
+    background-color: #e4f6f5;
+    font-size: 18px;
+    height: 100vh;
+    padding: p-vw(100) p-vw(40) 0;
+  }
+  .header--content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header--personal-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .header--personal-iamge {
+    margin-left: 24px;
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+    border-radius: 100em;
+  }
+  .header--link {
+    margin-top: 60px;
+    list-style: none;
+    &__item {
+      &:not(:first-of-type) {
+        margin-top: 30px;
+      }
+    }
+  }
+  .btn--logout {
+    position: fixed;
+    bottom: 140px;
+    width: 280px;
+    padding: 17px;
+    background-color: #707070;
+    border-radius: 100em;
+    text-align: center;
+    font-weight: bold;
+    &__text {
+      text-decoration: none;
+      display: block;
+      color: #fff;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  .profile {
+    .main--contents {
+      padding: p-vw(100) 0 0 p-vw(100);
+      width: 840px;
+      &__title {
+        font-size: 40px;
+        .title--text {
+          background:linear-gradient(transparent 69%, #c3e7e7 60%);
+          font-weight: normal;
+        }
+      }
+    }
+    .main--contents__image {
+      display: block;
+      margin-top: 50px;
+      text-align: center;
+      &--item {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 100em;
+      }
+      &--text {
+        display: block;
+      }
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .form--login {
+      margin-top: p-vw(50);
+      .input--area {
+        color: #272343;
+        .form--label {
+          display: inline-block;
+          width: 150px;
+        }
+        .form--input {
+          margin-top: 0.78125vw;
+          border: 1px solid #ccc;
+          border-radius: ;
+          width: 570px;
+          padding: 0.78125vw;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.profile {
+  .form--login {
+    margin-top: p-vw(50);
+    .input--area {
+      color: #272343;
+      .form--label {
+        display: inline-block;
+        width: 150px;
+      }
+      .form--input {
+        margin-top: p-vw(15);
+        border: 1px solid #ccc;
+        border-radius: p-vw(5);
+        width: 570px;
+        padding: p-vw(15);
+      }
+    }
+  }
+}

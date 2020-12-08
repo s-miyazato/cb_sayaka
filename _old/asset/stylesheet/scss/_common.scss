@@ -27,8 +27,13 @@ contents
 // 見出し
 
 // リンク
+a {
+  text-decoration: none;
+}
 .link-text {
   color: #272343;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #272343;
   &:hover {
     opacity: 0.5;
   }

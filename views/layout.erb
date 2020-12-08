@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= @title %></title>
+  <script src="https://cdn.jsdelivr.net/npm/viewport-extra@1.0.3/dist/viewport-extra.min.js"></script>
+  <script>
+    // 最小幅だけ設定
+    new ViewportExtra(375)
+    // 最大幅を設定
+    new ViewportExtra({ minWidth: 360, maxWidth: 414 })
+  </script>
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="./asset/stylesheet/css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body class="page">
+  <header class="header--area">
+    <div class="header--content">
+      <div class="header--personal-info">
+        <span class="header--personal-info__name">宮里 紗矢香</span>
+        <span class="header--personal-info__mail">s.miyazato@gimal.com</span>
+      </div>
+      <img class="header--personal-iamge" src="./asset/img/profile/personal-image.png" alt="">
+    </div>
+    <ul class="header--link">
+      <li class="header--link__item"><a class="link-text" href="">デザインイメージ登録</a></li>
+      <li class="header--link__item"><a class="link-text" href="">クライアント情報</a></li>
+      <li class="header--link__item"><a class="link-text" href="">プロフィール変更</a></li>
+    </ul>
+    <div class="btn btn--logout">
+      <a class="btn--logout__text" href="">ログアウト</a>
+    </div>
+  </header>
+  <%= yield %>
+</body>
+</html>

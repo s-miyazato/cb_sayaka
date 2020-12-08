@@ -1,0 +1,144 @@
+/*---------------------------------
+function
+---------------------------------*/
+@function vw($size, $viewport: 480) {
+  $rate: 100 / $viewport;
+  @return ($rate * $size) * 1vw;
+}
+
+@function p-vw($size, $viewport: 1920) {
+  $rate: 100 / $viewport;
+  @return ($rate * $size) * 1vw;
+}
+
+
+/*---------------------------------
+contents
+---------------------------------*/
+// フォント
+.en {
+  font-family: 'Lato', sans-serif;
+}
+// 配色
+.bg-yellow {
+  background-color: #ffd806;
+}
+
+// 見出し
+.main--contents {
+  padding: p-vw(100) 0 0 p-vw(100);
+  width: 840px;
+  &__title {
+    font-size: 40px;
+    .title--text {
+      background:linear-gradient(transparent 69%, #c3e7e7 60%);
+      font-weight: normal;
+    }
+  }
+}
+.main--contents__image {
+  display: block;
+  margin-top: 50px;
+  text-align: center;
+  &--item {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100em;
+  }
+  &--text {
+    display: block;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// リンク
+a {
+  text-decoration: none;
+}
+.link-text {
+  color: #272343;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #272343;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+//ボタン
+.btn--wrap {
+  text-align: center;
+  margin-top: p-vw(30);
+  .btn-content {
+    padding: p-vw(20) p-vw(140);
+    border-radius: 100em;
+    font-weight: bold;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+
+// header
+.page {
+  color: #272343;
+  display: flex;
+  .header--area {
+    background-color: #e4f6f5;
+    font-size: 18px;
+    height: 100vh;
+    padding: p-vw(100) p-vw(40) 0;
+    position: fixed;
+  }
+  .header--content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header--personal-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .header--personal-iamge {
+    margin-left: 24px;
+    width: 88px;
+    height: 88px;
+    object-fit: cover;
+    border-radius: 100em;
+  }
+  .header--link {
+    margin-top: 60px;
+    list-style: none;
+    &__item {
+      &:not(:first-of-type) {
+        margin-top: 30px;
+      }
+    }
+  }
+  .btn--logout {
+    position: fixed;
+    bottom: 140px;
+    width: 280px;
+    padding: 17px;
+    background-color: #707070;
+    border-radius: 100em;
+    text-align: center;
+    font-weight: bold;
+    &__text {
+      text-decoration: none;
+      display: block;
+      color: #fff;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+// ログイン以外のページ
+.page--contents {
+  margin-left: 368px;
+}

@@ -17,30 +17,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="favicon.ico">
 </head>
-<body>
+<body class="page">
   <header class="header--area">
     <div class="header--content">
       <div class="header--personal-info">
         <span class="header--personal-info__name">宮里 紗矢香</span>
         <span class="header--personal-info__mail">s.miyazato@gimal.com</span>
       </div>
-      <div class="header--personal-iamge">
-        <img class="image__content" src="./asset/img/profile/personal-image.png" alt="">
-      </div>
+      <img class="header--personal-iamge" src="./asset/img/profile/personal-image.png" alt="">
     </div>
     <ul class="header--link">
-      <li class="header--link__item"><a href="">デザインイメージ登録</a></li>
-      <li class="header--link__item"><a href="">クライアント情報</a></li>
-      <li class="header--link__item"><a href="">プロフィール変更</a></li>
+      <li class="header--link__item"><a class="link-text" href="">デザインイメージ登録</a></li>
+      <li class="header--link__item"><a class="link-text" href="">クライアント情報</a></li>
+      <li class="header--link__item"><a class="link-text" href="">プロフィール変更</a></li>
     </ul>
     <div class="btn btn--logout">
-      <a href="">ログアウト</a>
+      <a class="btn--logout__text" href="">ログアウト</a>
     </div>
   </header>
-  <main>
-    <div>
-      <h1><span>プロフィール変更</span></h1>
-      <div><img src="./asset/img/profile/add-img-personal.jpg" alt=""></div>
+  <main class="profile">
+    <div class="main--contents">
+      <h1 class="main--contents__title"><span class="title--text">プロフィール変更</span></h1>
+      <a class="main--contents__image" href="">
+        <img class="main--contents__image--item" src="./asset/img/profile/add-img-personal.jpg" alt="">
+        <span class="main--contents__image--text">画像変更</span>
+      </a>
       <form class="form--login" action="">
         <div class="input--area">
           <label class="form--label" for="email">ユーザー名</label>
