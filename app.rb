@@ -11,10 +11,37 @@ enable :sessions
 #   :user => ENV.fetch("DB_USER"), :password => ENV.fetch("DB_PASSWORD"),
 #   :dbname => ENV.fetch("DB_NAME"))
 
-# ページ表示
+
+client = PG::connect(
+  :host => "localhost",
+  :user => ENV.fetch("USER", "s.miyazato"), :password => '',
+  :dbname => "cb_sayaka")
+
+# ログインページ
 get '/login' do
   @title = 'ログイン'
   return erb :login, :layout => :login_layout
+end
+
+post '/login' do
+  email = params[:email]
+  password = params[:password]
+  user = client.exec_params(
+    "SELECT * FROM users WHERE email = $1 AND password = $2 LIMIT 1",
+    [email, password]
+  ).to_a.first
+  if user.nil?
+    @title = 'ログイン'
+    return erb :login, :layout => :login_layout
+  else
+    session[:user] = user
+    return redirect '/initial-registration'
+  end
+end
+
+delete '/signout' do
+  session[:user] = nil
+  return redirect '/login'
 end
 
 get '/initial-registration' do
