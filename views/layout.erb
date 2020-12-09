@@ -32,9 +32,12 @@
       <li class="header--link__item"><a class="link-text" href="">クライアント情報</a></li>
       <li class="header--link__item"><a class="link-text" href="/profile">プロフィール変更</a></li>
     </ul>
-    <div class="btn btn--logout">
-      <a class="btn--logout__text" href="">ログアウト</a>
-    </div>
+    <% if session[:user] %>
+      <form action="/signout" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <input class="btn btn--logout" type="submit" value="サインアウト">
+      </form>
+    <% end %>
   </header>
   <%= yield %>
 </body>

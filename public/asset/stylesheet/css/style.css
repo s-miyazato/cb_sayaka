@@ -78,11 +78,17 @@ ul {
 .input--area .form--label {
   display: inline-block;
 }
-.input--area .form--input {
+.input--area .form--input,
+.input--area .select--area {
   margin-top: 0.78125vw;
   border: 1px solid #ccc;
   border-radius: 0.2604166667vw;
   padding: 0.78125vw;
+}
+.input--area .select--area {
+  color: #272343;
+  background: url(/asset/img/form/icon-arrow.svg) right 50% no-repeat;
+  background-size: contain;
 }
 
 .radio--content {
@@ -106,7 +112,7 @@ ul {
   min-height: 1.5625vw;
   position: relative;
   top: 0.03em;
-  margin-right: 1em;
+  margin-right: 5px;
   vertical-align: top;
   cursor: pointer;
   text-align: center;
@@ -172,10 +178,6 @@ ul {
   border-radius: 100em;
   text-align: center;
   font-weight: bold;
-}
-.page .btn--logout__text {
-  text-decoration: none;
-  display: block;
   color: #fff;
 }
 .page .btn--logout:hover {
@@ -239,4 +241,32 @@ ul {
 }
 .profile .form--login .input--area .form--input {
   width: 570px;
+}
+
+.design .form--area {
+  margin-top: 60px;
+}
+.design .input--area {
+  display: flex;
+}
+.design .input--area:not(:first-of-type) {
+  margin-top: 48px;
+}
+.design .input--area .form--label {
+  width: 230px;
+}
+.design .input--area .form--input,
+.design .input--area .radio-list {
+  margin-top: 0;
+  width: 570px;
+}
+.design .input--area .radio-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.design .input--area .radio-list .radio--content {
+  margin-right: 20px;
+}
+.design .input--area .select--area {
+  width: 330px;
 }

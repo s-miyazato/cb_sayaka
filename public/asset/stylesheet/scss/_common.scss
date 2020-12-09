@@ -92,11 +92,17 @@ ul {
   .form--label {
     display: inline-block;
   }
-  .form--input {
+  .form--input,
+  .select--area {
     margin-top: p-vw(15);
     border: 1px solid #ccc;
     border-radius: p-vw(5);
     padding: p-vw(15);
+  }
+  .select--area {
+    color: #272343;
+    background: url(/asset/img/form/icon-arrow.svg) right 50% no-repeat;
+    background-size: contain;
   }
 }
 
@@ -118,7 +124,7 @@ ul {
         min-height: p-vw(30);
         position: relative;
         top: 0.03em;
-        margin-right: 1em; 
+        margin-right: 5px; 
         vertical-align: top;
         cursor: pointer;
         text-align: center;
@@ -206,11 +212,7 @@ ul {
     border-radius: 100em;
     text-align: center;
     font-weight: bold;
-    &__text {
-      text-decoration: none;
-      display: block;
-      color: #fff;
-    }
+    color: #fff;
     &:hover {
       opacity: 0.8;
     }

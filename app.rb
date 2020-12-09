@@ -6,47 +6,49 @@ require 'pg'
 
 enable :sessions
 
-# client = PG::connect(
-#   :host => ENV.fetch("DB_HOST", "localhost"),
-#   :user => ENV.fetch("DB_USER"), :password => ENV.fetch("DB_PASSWORD"),
-#   :dbname => ENV.fetch("DB_NAME"))
-
-
 client = PG::connect(
   :host => "localhost",
   :user => ENV.fetch("USER", "s.miyazato"), :password => '',
   :dbname => "cb_sayaka")
 
+
 # ログインページ
-get '/login' do
+get '/' do
   @title = 'ログイン'
   return erb :login, :layout => :login_layout
 end
 
-post '/login' do
+post '/' do
   email = params[:email]
   password = params[:password]
-  user = client.exec_params(
-    "SELECT * FROM users WHERE email = $1 AND password = $2 LIMIT 1",
-    [email, password]
-  ).to_a.first
+  user = client.exec_params("SELECT * FROM initial_registration WHERE email = '#{email}' AND password = '#{password}'").to_a.first
   if user.nil?
-    @title = 'ログイン'
     return erb :login, :layout => :login_layout
   else
     session[:user] = user
-    return redirect '/initial-registration'
+    return redirect '/design'
   end
 end
 
 delete '/signout' do
   session[:user] = nil
-  return redirect '/login'
+  return redirect '/'
 end
 
 get '/initial-registration' do
   @title = '新規登録'
   return erb :initial_registration, :layout => :login_layout
+end
+
+post '/initial-registration' do
+  name = params[:name]
+  email = params[:email]
+  password = params[:password]
+  # binding.irb
+  client.exec_params("INSERT INTO initial_registration (name, email, password) VALUES ($1, $2, $3)", [name, email, password])
+  user = client.exec_params("SELECT * from initial_registration WHERE email = $1 AND password = $2", [email, password]).to_a.first
+  session[:user] = user
+  return redirect '/design'
 end
 
 get '/profile' do
