@@ -1,11 +1,16 @@
 .profile {
   .form--login {
     margin-top: p-vw(50);
+    text-align: center;
     .input--area {
+      &:not(:first-of-type) {
+        margin-top: p-vw(50);
+      }
       .form--label {
         width: 150px;
       }
       .form--input {
+        margin-top: 0;
         width: 570px;
       }
     }

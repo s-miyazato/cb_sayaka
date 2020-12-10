@@ -1,8 +1,20 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require "pry"
+require "date"
 require 'sinatra/cookies'
 require 'pg'
+
+/#
+  日付取得方法
+  ・DateTime.now で 今の現在時刻取れる
+  <DateTime: -4274-02-22T20:05:07+09:00 ((160032j,39907s,773819000n),+32400s,2299161j)>
+
+  変数に格納して使う
+  nowtime = DateTime.now 
+#/ 
+
+
 
 enable :sessions
 
@@ -26,6 +38,7 @@ post '/' do
     return erb :login, :layout => :login_layout
   else
     session[:user] = user
+    binding.irb
     return redirect '/design'
   end
 end
@@ -53,10 +66,36 @@ end
 
 get '/profile' do
   @title = 'プロフィール'
+  current_user = session[:user]
+  @img = current_user["img"]
+  @name = current_user["name"]
+  @email = current_user["email"]
+  @password = current_user["password"]
   return erb :profile
+end
+
+post '/profile' do
+  img = params[:img]
+  name = params[:name]
+  email = params[:email]
+  password = params[:password]
+  current_user = session[:user]["name"]
+
+  if !params[:img].nil? # データがあれば処理を続行する
+    tempfile = params[:img][:tempfile] # ファイルがアップロードされた場所
+    save_to = "./public/asset/img/profile/#{params[:img][:filename]}" # ファイルを保存したい場所
+    FileUtils.mv(tempfile, save_to)
+    @img_name = params[:img][:filename]
+  end
+  current_user = session[:user]
+
+  client.exec_params("UPDATE initial_registration SET name = $1, email = $2, password = $3, img = $4 WHERE id = '#{current_user["id"]}';", [name, email, password, img])
+
+  return redirect :profile
 end
 
 get '/design' do
   @title = 'デザイン登録'
+
   return erb :design
 end

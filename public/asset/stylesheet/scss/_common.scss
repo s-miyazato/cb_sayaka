@@ -19,6 +19,14 @@ contents
 .en {
   font-family: 'Lato', sans-serif;
 }
+// テキスト揃え
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: left;
+}
+
 // 配色
 .bg-yellow {
   background-color: #ffd806;
@@ -37,9 +45,9 @@ contents
   }
 }
 .main--contents__image {
-  display: block;
-  margin-top: 50px;
+  display: inline-block;
   text-align: center;
+  position: relative;
   &--item {
     width: 200px;
     height: 200px;
@@ -51,6 +59,14 @@ contents
   }
   &:hover {
     opacity: 0.8;
+  }
+  .filesend {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
   }
 }
 
@@ -173,6 +189,7 @@ ul {
   display: flex;
   .header--area {
     background-color: #e4f6f5;
+    width: 327px;
     font-size: 18px;
     height: 100vh;
     padding: p-vw(100) p-vw(40) 0;
@@ -221,5 +238,5 @@ ul {
 
 // ログイン以外のページ
 .page--contents {
-  margin-left: 368px;
+  margin-left: 328px;
 }

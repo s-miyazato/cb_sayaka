@@ -22,10 +22,10 @@
   <header class="header--area">
     <div class="header--content">
       <div class="header--personal-info">
-        <span class="header--personal-info__name">宮里 紗矢香</span>
-        <span class="header--personal-info__mail">s.miyazato@gimal.com</span>
+        <span class="header--personal-info__name"><%= session[:user]["name"] %></span>
+        <span class="header--personal-info__mail"><%= session[:user]["email"] %></span>
       </div>
-      <img class="header--personal-iamge" src="./asset/img/profile/personal-image.png" alt="">
+      <img class="header--personal-iamge" src="./asset/img/profile/#{session[:user]['img']}" alt="">
     </div>
     <ul class="header--link">
       <li class="header--link__item"><a class="link-text" href="/initial-registration">デザインイメージ登録</a></li>
@@ -40,5 +40,6 @@
     <% end %>
   </header>
   <%= yield %>
+  <script src="./asset/js/script.js"></script>
 </body>
 </html>

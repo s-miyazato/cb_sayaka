@@ -1,22 +1,25 @@
 <main class="page--contents profile">
   <div class="main--contents">
     <h1 class="main--contents__title"><span class="title--text">プロフィール変更</span></h1>
-    <a class="main--contents__image" href="">
-      <img class="main--contents__image--item" src="./asset/img/profile/add-img-personal.jpg" alt="">
-      <span class="main--contents__image--text">画像変更</span>
-    </a>
-    <form class="form--login" action="">
-      <div class="input--area">
-        <label class="form--label" for="email">ユーザー名</label>
-        <input class="form--input" type="email" id="" name="email">
+    <form class="form--login" action="/profile" method="post" enctype="multipart/form-data">
+      <div class="input--area main--contents__image">
+        <label  class="form--img" for="img">
+          <img  class="main--contents__image--item" id="preview" src="/asset/img/profile/add-img-personal.jpg" alt="" srcset="">
+          <input class="main--contents__image--btn filesend" type="file" name="img" onchange="previewImage(this);">
+          <span class="main--contents__image--text">画像変更</span>
+        </label>
       </div>
       <div class="input--area">
-        <label class="form--label" for="email">メールアドレス</label>
-        <input class="form--input" type="email" id="" name="email">
+        <label class="form--label text-left" for="name">ユーザー名</label>
+        <input class="form--input" type="text" id="" name="name" value="<%= @name %>">
       </div>
       <div class="input--area">
-        <label class="form--label" for="pass">パスワード</label>
-        <input class="form--input" type="password" id="pass" name="password" minlength="8" required>
+        <label class="form--label text-left" for="email">メールアドレス</label>
+        <input class="form--input" type="email" id="" name="email" value="<%= @email %>">
+      </div>
+      <div class="input--area">
+        <label class="form--label text-left" for="password">パスワード</label>
+        <input class="form--input" type="password" id="pass" name="password" minlength="4" value="<%= @password %>">
       </div>
       <div class="btn--wrap">
         <input class="btn-content bg-yellow" type="submit" value="登録する">
