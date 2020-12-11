@@ -1,0 +1,9 @@
+<svg id="Component_-_Prev_-_Small" data-name="Component - Prev - Small" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="長方形_1073" data-name="長方形 1073" fill="#fafafa" stroke="#707070" stroke-width="1">
+    <rect width="50" height="50" rx="10" stroke="none"/>
+    <rect x="0.5" y="0.5" width="49" height="49" rx="9.5" fill="none"/>
+  </g>
+  <g id="Icon_-_ArrowLeft_-_Small" data-name="Icon - ArrowLeft - Small" transform="translate(22 20)">
+    <path id="パス_36" data-name="パス 36" d="M6.7,8.1,2,3.4,3.4,2,6.7,5.3,10,2l1.4,1.4Z" transform="translate(8.1 -2) rotate(90)" fill="#272343"/>
+  </g>
+</svg>
