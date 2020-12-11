@@ -6,6 +6,9 @@
       &:not(:first-of-type) {
         margin-top: p-vw(50);
       }
+      .form--img {
+        margin: 0 auto;
+      }
       .form--label {
         width: 150px;
       }

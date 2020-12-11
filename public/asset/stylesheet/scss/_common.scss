@@ -95,6 +95,13 @@ a {
       opacity: 0.8;
     }
   }
+  .btn-square {
+    border-radius: 5px;
+    margin-left: 230px;
+  }
+  &.left {
+    text-align: initial;
+  }
 }
 
 // リスト
@@ -117,6 +124,7 @@ ul {
   }
   .select--area {
     color: #272343;
+    margin-top: 0;
     background: url(/asset/img/form/icon-arrow.svg) right 50% no-repeat;
     background-size: contain;
   }
@@ -245,4 +253,33 @@ ul {
 // ログイン以外のページ
 .page--contents {
   margin-left: 328px;
+}
+
+.form--area {
+  margin-top: 60px;
+  padding-bottom: 100px;
+}
+.input--area {
+  display: flex;
+  &:not(:first-of-type) {
+    margin-top: 48px;
+  }
+  .form--label {
+    width: 230px;
+  }
+  .form--input,
+  .radio-list {
+    margin-top: 0;
+    width: 510px;
+  }
+  .radio-list {
+    display: flex;
+    flex-wrap: wrap;
+    .radio--content {
+      margin-right: 20px;
+    }
+  }
+  .select--area {
+    width: 330px;
+  }
 }

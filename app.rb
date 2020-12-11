@@ -109,6 +109,11 @@ get '/design' do
   return erb :design
 end
 
+get '/client-list' do
+  @title = 'クライアント情報一覧'
+  return erb :client_list
+end
+
 get '/client-info' do
   @title = 'クライアント情報'
   return erb :client_info
