@@ -4,8 +4,8 @@
     <form class="form--login" action="/profile" method="post" enctype="multipart/form-data">
       <div class="input--area main--contents__image">
         <label  class="form--img" for="img">
-          <img  class="main--contents__image--item" id="preview" src="/asset/img/profile/add-img-personal.jpg" alt="" srcset="">
-          <input class="main--contents__image--btn filesend" type="file" name="img" onchange="previewImage(this);">
+          <img  class="main--contents__image--item" id="preview" src="/asset/img/profile/<%= @img_name %>" alt="" srcset="">
+          <input class="main--contents__image--btn filesend" type="file" value="<%= @img_name %>" name="img" onchange="previewImage(this); ">
           <span class="main--contents__image--text">画像変更</span>
         </label>
       </div>

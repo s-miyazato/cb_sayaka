@@ -25,11 +25,13 @@
         <span class="header--personal-info__name"><%= session[:user]["name"] %></span>
         <span class="header--personal-info__mail"><%= session[:user]["email"] %></span>
       </div>
-      <img class="header--personal-iamge" src="./asset/img/profile/#{session[:user]['img']}" alt="">
+      
+      <img class="header--personal-iamge" src="./asset/img/profile/<%= @img_name %>" alt="">
     </div>
     <ul class="header--link">
       <li class="header--link__item"><a class="link-text" href="/initial-registration">デザインイメージ登録</a></li>
-      <li class="header--link__item"><a class="link-text" href="">クライアント情報</a></li>
+      <li class="header--link__item"><a class="link-text" href="/client-
+      info">クライアント情報</a></li>
       <li class="header--link__item"><a class="link-text" href="/profile">プロフィール変更</a></li>
     </ul>
     <% if session[:user] %>

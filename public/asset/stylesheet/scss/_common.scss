@@ -203,6 +203,12 @@ ul {
   .header--personal-info {
     display: flex;
     flex-direction: column;
+    width: 60%;
+    word-wrap: break-word;
+    line-height: 1.2;
+    &__mail {
+      margin-top: 10px;
+    }
   }
   .header--personal-iamge {
     margin-left: 24px;

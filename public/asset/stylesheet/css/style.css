@@ -171,6 +171,12 @@ ul {
 .page .header--personal-info {
   display: flex;
   flex-direction: column;
+  width: 60%;
+  word-wrap: break-word;
+  line-height: 1.2;
+}
+.page .header--personal-info__mail {
+  margin-top: 10px;
 }
 .page .header--personal-iamge {
   margin-left: 24px;
