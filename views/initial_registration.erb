@@ -5,16 +5,19 @@
       <form class="form--login" action="/initial-registration" method="post">
         <div class="input--area">
           <label class="form--label" for="name">ユーザー名</label>
-          <input class="form--input" type="text" id="" name="name">
+          <input class="form--input" type="text" id="" name="name" placeholder="入力してください">
         </div>
         <div class="input--area">
           <label class="form--label" for="email">メールアドレス</label>
-          <input class="form--input" type="email" id="" name="email">
+          <input class="form--input" type="email" id="" name="email" placeholder="sample@inc.com">
         </div>
         <div class="input--area">
           <label class="form--label" for="password">パスワード</label>
-          <input class="form--input" type="password" id="pass" name="password" minlength="4" required>
+          <input class="form--input" type="password" id="pass" name="password" placeholder="4文字以上で入力してください" minlength="4" required>
         </div>
+        <span class="link--new-account">
+          <a class="link-text" href="/">ログイン画面に戻る</a>
+        </span>
         <div class="btn--wrap">
           <input class="btn-content bg-yellow" type="submit" value="登録する">
         </div>

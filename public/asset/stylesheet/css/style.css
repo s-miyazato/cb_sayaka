@@ -73,7 +73,7 @@ a {
 
 .btn--wrap {
   text-align: center;
-  margin-top: 1.5625vw;
+  margin-top: 3.125vw;
 }
 .btn--wrap .btn-content {
   padding: 1.0416666667vw 7.2916666667vw;
@@ -93,26 +93,6 @@ a {
 
 ul {
   list-style: none;
-}
-
-.input--area {
-  color: #272343;
-}
-.input--area .form--label {
-  display: inline-block;
-}
-.input--area .form--input,
-.input--area .select--area {
-  margin-top: 0.78125vw;
-  border: 1px solid #ccc;
-  border-radius: 0.2604166667vw;
-  padding: 0.78125vw;
-}
-.input--area .select--area {
-  color: #272343;
-  margin-top: 0;
-  background: url(/asset/img/form/icon-arrow.svg) right 50% no-repeat;
-  background-size: contain;
 }
 
 .radio--content {
@@ -156,6 +136,59 @@ ul {
   background: #8c8c8c;
 }
 .radio--content input[type=radio] + .radio-label:empty:before {
+  margin-right: 0;
+}
+
+.checkbox--content {
+  margin: 0.5rem 0;
+}
+.checkbox--content input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+}
+.checkbox--content input[type=checkbox] + .checkbox-label {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.checkbox--content input[type=checkbox] + .checkbox-label:before {
+  content: "";
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #8c8c8c;
+  display: inline-block;
+  min-width: 1.5625vw;
+  min-height: 1.5625vw;
+  position: relative;
+  top: 0.03em;
+  margin-right: 5px;
+  vertical-align: top;
+  cursor: pointer;
+  text-align: center;
+  transition: all 250ms ease;
+}
+.checkbox--content input[type=checkbox]:checked + .checkbox-label::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -0.27vw;
+  left: 0.68vw;
+  width: 0.68vw;
+  height: 1.35vw;
+  transform: rotate(40deg);
+  border-bottom: 4px solid #ffd806;
+  border-right: 4px solid #ffd806;
+}
+.checkbox--content input[type=checkbox]:focus + .checkbox-label:before {
+  outline: none;
+  border-color: #ffd806;
+}
+.checkbox--content input[type=checkbox]:disabled + .checkbox-label:before {
+  box-shadow: inset 0 0 0 4px #fff;
+  border-color: #8c8c8c;
+  background: #8c8c8c;
+}
+.checkbox--content input[type=checkbox] + .checkbox-label:empty:before {
   margin-right: 0;
 }
 
@@ -225,6 +258,20 @@ ul {
 }
 
 .input--area {
+  color: #272343;
+}
+.input--area .form--label {
+  display: inline-block;
+}
+.input--area .form--input,
+.input--area .select--area {
+  margin-top: 0.78125vw;
+  border: 1px solid #ccc;
+  border-radius: 0.2604166667vw;
+  padding: 0.78125vw;
+}
+
+.input--area {
   display: flex;
 }
 .input--area:not(:first-of-type) {
@@ -247,6 +294,18 @@ ul {
 }
 .input--area .select--area {
   width: 330px;
+  color: #272343;
+  margin-top: 0;
+  background: url(/asset/img/form/icon-arrow.svg) right 50% no-repeat;
+  background-size: contain;
+}
+
+.login .input--area {
+  display: inherit;
+}
+
+.content--area {
+  margin-top: 60px;
 }
 
 .login {
@@ -310,4 +369,68 @@ ul {
 .profile .form--login .input--area .form--input {
   margin-top: 0;
   width: 570px;
+}
+
+.client-list .page--header {
+  display: flex;
+  align-items: center;
+}
+.client-list .btn-add {
+  color: #272343;
+  font-size: 18px;
+  margin-left: 20px;
+}
+.client-list .btn-add::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: bottom;
+  margin-right: 5px;
+  background-image: url(/asset/img/form/icon-btn-add.svg);
+}
+.client-list .btn-add:hover {
+  opacity: 0.5;
+}
+.client-list .table--area {
+  border-collapse: collapse;
+  border: 1px solid #707070;
+}
+.client-list .table--area .table--head {
+  text-align: left;
+  height: 60px;
+  border-bottom: 1px solid #707070;
+}
+.client-list .table--area .table--content {
+  height: 60px;
+}
+.client-list .table--area .table--content:nth-of-type(even) {
+  background-color: #f5f5f5;
+}
+.client-list .table--area .table__client-name {
+  width: 428px;
+  padding-left: 30px;
+}
+.client-list .table--area .table__client-name--link {
+  color: #272343;
+  padding-bottom: 3px;
+}
+.client-list .table--area .table__client-name--link:hover {
+  opacity: 0.5;
+}
+.client-list .table--area .table__client-registrant {
+  width: 232px;
+}
+.client-list .table--area .table__client-date {
+  width: 130px;
+}
+.client-list .btn--list--wrap {
+  margin: 50px auto 0;
+  width: 126px;
+  display: flex;
+  justify-content: space-between;
+}
+.client-list .btn--list--wrap .btn--list__return:hover,
+.client-list .btn--list--wrap .btn--list__next:hover {
+  opacity: 0.5;
 }
