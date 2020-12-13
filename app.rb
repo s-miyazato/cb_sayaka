@@ -25,7 +25,7 @@ client = PG::connect(
 
 before do
   if session[:user]
-    session[:user] = client.exec_params("SELECT * FROM initial_registration WHERE id = '#{session[:user]["id"]}'").to_a.first
+    session[:user] = client.exec_params("SELECT * FROM users WHERE id = '#{session[:user]["id"]}'").to_a.first
     if session[:user]["img"].nil?
       @img_name = "add-img-personal.jpg"
     else
@@ -43,7 +43,7 @@ end
 post '/' do
   email = params[:email]
   password = params[:password]
-  user = client.exec_params("SELECT * FROM initial_registration WHERE email = '#{email}' AND password = '#{password}'").to_a.first
+  user = client.exec_params("SELECT * FROM users WHERE email = '#{email}' AND password = '#{password}'").to_a.first
   if user.nil?
     return erb :login, :layout => :login_layout
   else
@@ -68,8 +68,8 @@ post '/initial-registration' do
   email = params[:email]
   password = params[:password]
   # binding.irb
-  client.exec_params("INSERT INTO initial_registration (name, email, password) VALUES ($1, $2, $3)", [name, email, password])
-  user = client.exec_params("SELECT * from initial_registration WHERE email = $1 AND password = $2", [email, password]).to_a.first
+  client.exec_params("INSERT INTO users (name, email, password) VALUES ($1, $2, $3)", [name, email, password])
+  user = client.exec_params("SELECT * from users WHERE email = $1 AND password = $2", [email, password]).to_a.first
   session[:user] = user
   return redirect '/design'
 end
@@ -85,7 +85,7 @@ get '/profile' do
 end
 
 post '/profile' do
-  img = params[:img]
+  @img_name = session[:user]["img"]
   name = params[:name]
   email = params[:email]
   password = params[:password]
@@ -96,11 +96,9 @@ post '/profile' do
     save_to = "./public/asset/img/profile/#{params[:img][:filename]}" # ファイルを保存したい場所
     FileUtils.mv(tempfile, save_to)
     @img_name = params[:img][:filename]
-    img = params[:img][:filename]
   end
-
-  client.exec_params("UPDATE initial_registration SET name = $1, email = $2, password = $3, img = $4 WHERE id = '#{current_user["id"]}'", [name, email, password, img])
-  @img_name = session[:user]["img"]
+  
+  client.exec_params("UPDATE users SET name = $1, email = $2, password = $3, img = $4 WHERE id = '#{current_user["id"]}'", [name, email, password, @img_name])
   return redirect :design
 end
 
@@ -114,7 +112,35 @@ get '/client-list' do
   return erb :client_list
 end
 
+post '/client-list' do
+  
+end
+
 get '/client-info' do
   @title = 'クライアント情報'
   return erb :client_info
+end
+
+post '/client-info' do
+  puts params
+  @title = 'クライアント情報'
+
+  company_name = params[:company_name]
+  contact_person = params[:contact_person]
+  tel = params[:tel]
+  email= params[:email]
+  purpose = params[:purpose]
+  budget = params[:budget]
+  operation = params[:operation]
+  memo = params[:memo]
+
+  client.exec_params("INSERT INTO client_info (company_name, contact_person, tel, purpose, budget, operation, memo, email) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)", [company_name, contact_person, tel, purpose, budget, operation, memo, email])
+  user = client.exec_params("SELECT * from client_info")
+
+  return redirect '/client-page'
+end
+
+get '/client-page' do
+  @title = 'クライアント詳細ページ'
+  return erb :client_page
 end

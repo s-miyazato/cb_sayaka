@@ -330,15 +330,31 @@ ul {
     width: 230px;
   }
   .form--input,
-  .radio-list {
+  .radio-list,
+  .checkbox-list,
+  .image-list {
     margin-top: 0;
     width: 510px;
   }
-  .radio-list {
+  .radio-list,
+  .checkbox-list {
     display: flex;
     flex-wrap: wrap;
-    .radio--content {
+    .radio--content,
+    .checkbox--content {
       margin-right: 20px;
+    }
+  }
+  .image-list {
+    display: flex;
+    flex-wrap: wrap;
+    &__item {
+      width: calc((100% / 2) - 2%);
+      margin: 1%;
+      a {
+        display: block;
+        img {width: 100%;}
+      }
     }
   }
   .select--area {
